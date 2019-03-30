@@ -1,0 +1,556 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Unfix</name>
+    </assembly>
+    <members>
+        <member name="T:Unfix.IDateTimeAdapter">
+            <summary>
+            A date time adapter
+            </summary>
+        </member>
+        <member name="P:Unfix.IDateTimeAdapter.MaxValue">
+            <summary>
+            Maximum supported date time value
+            </summary>
+        </member>
+        <member name="P:Unfix.IDateTimeAdapter.MinValue">
+            <summary>
+            Miniumu supported date time value
+            </summary>
+        </member>
+        <member name="P:Unfix.IDateTimeAdapter.Now">
+            <summary>
+            Now
+            </summary>
+        </member>
+        <member name="P:Unfix.IDateTimeAdapter.Today">
+            <summary>
+            Today
+            </summary>
+        </member>
+        <member name="P:Unfix.IDateTimeAdapter.UtcNow">
+            <summary>
+            Now (UTC)
+            </summary>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.DaysInMonth(System.Int32,System.Int32)">
+            <summary>
+            Days in the <paramref name="month"/> of the specified <paramref name="year"/>
+            </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.FromBinary(System.Int64)">
+            <summary>
+            Deserializes a 64-bit binary value and recreates an original serialized DateTime object.
+            </summary>
+            <param name="dateData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.FromFileTime(System.Int64)">
+            <summary>
+            Converts the specified Windows <paramref name="fileTime"/> to an equivalent local time.
+            </summary>
+            <param name="fileTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.FromFileTimeUtc(System.Int64)">
+            <summary>
+            Converts the specified Windows <paramref name="fileTime"/> to an equivalent UTC time.
+            </summary>
+            <param name="fileTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.FromOADate(System.Double)">
+            <summary>
+            Returns a DateTime equivalent to the specified OLE Automation Date.
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.IsLeapYear(System.Int32)">
+            <summary>
+            Returns whether the specified <paramref name="year"/> is a leap year.
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/>.
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.Parse(System.String)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            the conventions of the current thread culture.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/> and a formatting style.
+            </summary>
+            <param name="span"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/> and a formatting style.
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.ParseExact(System.String,System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly or an exception
+            is thrown.
+            </summary>
+            <param name="s"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.ParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="format"/>, culture-specific format information, and style. The format of the string
+            representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.ParseExact(System.String,System.String,System.IFormatProvider)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified format and culture-specific format information. The format of the string representation must match the
+            specified format exactly.
+            </summary>
+            <param name="s"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.ParseExact(System.ReadOnlySpan{System.Char},System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly or an exception
+            is thrown.
+            </summary>
+            <param name="span"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.ParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="format"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly or an exception
+            is thrown.
+            </summary>
+            <param name="span"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.SpecifyKind(System.DateTime,System.DateTimeKind)">
+            <summary>
+            Creates a new <see cref="T:System.DateTime"/> object that has the same number of ticks as the specified <paramref name="dateTime"/>, but is
+            designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified <paramref name="kind"/>
+            value.
+            </summary>
+            <param name="dateTime"></param>
+            <param name="kind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParse(System.String,System.DateTime@)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            the conventions of the current thread culture.
+            </summary>
+            <param name="s"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/>.
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParse(System.ReadOnlySpan{System.Char},System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the conventions of the current thread culture.
+            </summary>
+            <param name="span"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/> and a formatting style.
+            </summary>
+            <param name="span"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="format"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly.
+            </summary>
+            <param name="span"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParseExact(System.ReadOnlySpan{System.Char},System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match the specified format exactly.
+            </summary>
+            <param name="span"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="format"/>, culture-specific format information, and style. The format of the string
+            representation must match the specified format exactly.
+            </summary>
+            <param name="s"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.IDateTimeAdapter.TryParseExact(System.String,System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly.
+            </summary>
+            <param name="s"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Unfix.Implementation.DateTimeAdapter">
+            <summary>
+            An adapter that delegates to <see cref="T:System.DateTime"/> 
+            </summary>
+        </member>
+        <member name="P:Unfix.Implementation.DateTimeAdapter.MaxValue">
+            <summary>
+            Maximum supported date time value
+            </summary>
+        </member>
+        <member name="P:Unfix.Implementation.DateTimeAdapter.MinValue">
+            <summary>
+            Miniumu supported date time value
+            </summary>
+        </member>
+        <member name="P:Unfix.Implementation.DateTimeAdapter.Now">
+            <summary>
+            Now
+            </summary>
+        </member>
+        <member name="P:Unfix.Implementation.DateTimeAdapter.Today">
+            <summary>
+            Today
+            </summary>
+        </member>
+        <member name="P:Unfix.Implementation.DateTimeAdapter.UtcNow">
+            <summary>
+            Now (UTC)
+            </summary>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.DaysInMonth(System.Int32,System.Int32)">
+            <summary>
+            Days in the <paramref name="month"/> of the specified <paramref name="year"/>
+            </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.FromBinary(System.Int64)">
+            <summary>
+            Deserializes a 64-bit binary value and recreates an original serialized DateTime object.
+            </summary>
+            <param name="dateData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.FromFileTime(System.Int64)">
+            <summary>
+            Converts the specified Windows <paramref name="fileTime"/> to an equivalent local time.
+            </summary>
+            <param name="fileTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.FromFileTimeUtc(System.Int64)">
+            <summary>
+            Converts the specified Windows <paramref name="fileTime"/> to an equivalent UTC time.
+            </summary>
+            <param name="fileTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.FromOADate(System.Double)">
+            <summary>
+            Returns a DateTime equivalent to the specified OLE Automation Date.
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.IsLeapYear(System.Int32)">
+            <summary>
+            Returns whether the specified <paramref name="year"/> is a leap year.
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/>.
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.Parse(System.String)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            the conventions of the current thread culture.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/> and a formatting style.
+            </summary>
+            <param name="span"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/> and a formatting style.
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.ParseExact(System.String,System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly or an exception
+            is thrown.
+            </summary>
+            <param name="s"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.ParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="format"/>, culture-specific format information, and style. The format of the string
+            representation must match the specified format exactly or an exception is thrown.
+            </summary>
+            <param name="s"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.ParseExact(System.String,System.String,System.IFormatProvider)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified format and culture-specific format information. The format of the string representation must match the
+            specified format exactly.
+            </summary>
+            <param name="s"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.ParseExact(System.ReadOnlySpan{System.Char},System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly or an exception
+            is thrown.
+            </summary>
+            <param name="span"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.ParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="format"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly or an exception
+            is thrown.
+            </summary>
+            <param name="span"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.SpecifyKind(System.DateTime,System.DateTimeKind)">
+            <summary>
+            Creates a new <see cref="T:System.DateTime"/> object that has the same number of ticks as the specified <paramref name="dateTime"/>, but is
+            designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified <paramref name="kind"/>
+            value.
+            </summary>
+            <param name="dateTime"></param>
+            <param name="kind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParse(System.String,System.DateTime@)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            the conventions of the current thread culture.
+            </summary>
+            <param name="s"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts the string representation <paramref name="s"/> of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/>.
+            </summary>
+            <param name="s"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParse(System.ReadOnlySpan{System.Char},System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the conventions of the current thread culture.
+            </summary>
+            <param name="span"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            culture-specific format information from the <paramref name="provider"/> and a formatting style.
+            </summary>
+            <param name="span"></param>
+            <param name="provider"></param>
+            <param name="styles"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParseExact(System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="format"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly.
+            </summary>
+            <param name="span"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParseExact(System.ReadOnlySpan{System.Char},System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts a <paramref name="span"/> that contains string representation of a date and time to its DateTime equivalent by using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match the specified format exactly.
+            </summary>
+            <param name="span"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParseExact(System.String,System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="format"/>, culture-specific format information, and style. The format of the string
+            representation must match the specified format exactly.
+            </summary>
+            <param name="s"></param>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unfix.Implementation.DateTimeAdapter.TryParseExact(System.String,System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)">
+            <summary>
+            Converts the specified string representation <paramref name="s"/> of a date and time to its DateTime equivalent using
+            the specified <paramref name="formats"/>, culture-specific format information from the <paramref name="provider"/>,
+            and style. The format of the string representation must match at least one of the specified formats exactly.
+            </summary>
+            <param name="s"></param>
+            <param name="formats"></param>
+            <param name="provider"></param>
+            <param name="style"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
